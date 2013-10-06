@@ -464,6 +464,10 @@ static void option_instat_callback(struct urb *urb);
 #define USI_UNAP_PRODUCT_5COM	0x00a5
 #define USI_UNAP_PRODUCT_ECM	0x00a7
 
+/* Inovia */
+#define INOVIA_VENDOR_ID			0x20a6
+#define INOVIA_SEW858				0x1105
+
 /* some devices interfaces need special handling due to a number of reasons */
 enum option_blacklist_reason {
 		OPTION_BLACKLIST_NONE = 0,
@@ -1378,6 +1382,7 @@ static const struct usb_device_id option_ids[] = {
 	{ USB_DEVICE(USI_UNA_VENDOR_ID, USI_UNA_PRODUCT_2COM) },
 	{ USB_DEVICE(USI_UNA_VENDOR_ID, USI_UNAP_PRODUCT_5COM) },
 	{ USB_DEVICE(USI_UNA_VENDOR_ID, USI_UNAP_PRODUCT_ECM) },
+	{ USB_DEVICE(INOVIA_VENDOR_ID, INOVIA_SEW858) },
 	{ } /* Terminating entry */
 };
 MODULE_DEVICE_TABLE(usb, option_ids);
