@@ -3,7 +3,7 @@
  *
  * CPU complex suspend & resume functions for Tegra SoCs
  *
- * Copyright (c) 2009-2013, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2009-2014, NVIDIA CORPORATION.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -1281,6 +1281,7 @@ void __init tegra_init_suspend(struct tegra_suspend_platform_data *plat)
 	tegra_pclk = clk_get_sys(NULL, "pclk");
 	BUG_ON(IS_ERR(tegra_pclk));
 	tegra_clk_m = clk_get_sys(NULL, "clk_m");
+
 	BUG_ON(IS_ERR(tegra_clk_m));
 	pdata = plat;
 	(void)reg;

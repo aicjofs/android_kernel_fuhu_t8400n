@@ -68,6 +68,7 @@
 #include <asm/mach/arch.h>
 #include <mach/usb_phy.h>
 #include <mach/gpio-tegra.h>
+#include <mach/tegra_fiq_debugger.h>
 #include <mach/tegra-bb-power.h>
 #include <linux/platform_data/tegra_usb_modem_power.h>
 #include <mach/hardware.h>
@@ -1300,6 +1301,7 @@ static void __init tegra_pluto_init(void)
 	tegra_wdt_recovery_init();
 #endif
 	pluto_sensors_init();
+	tegra_serial_debug_init(TEGRA_UARTD_BASE, INT_WDT_CPU, NULL, -1, -1);
 	pluto_soctherm_init();
 	tegra_register_fuse();
 	pluto_sysedp_core_init();

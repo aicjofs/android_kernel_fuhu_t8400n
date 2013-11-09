@@ -1,7 +1,7 @@
 /*
  * arch/arm/mach-tegra/include/mach/xusb.h
  *
- * Copyright (c) 2013, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2013-2014, NVIDIA CORPORATION.  All rights reserved.
  *
  * Author:
  *	Ajay Gupta <ajayg@nvidia.com>

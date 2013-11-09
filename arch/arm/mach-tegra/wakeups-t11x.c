@@ -72,7 +72,7 @@ static int tegra_gpio_wakes[] = {
 	-EINVAL,				/* wake31 */
 	-EINVAL,				/* wake32 */
 	TEGRA_GPIO_PJ0,				/* wake33 */
-	-EINVAL,				/* wake34 */
+	TEGRA_GPIO_PK2,				/* wake34 */
 	TEGRA_GPIO_PI6,				/* wake35 */
 	-EINVAL,				/* wake36 */
 	-EINVAL,				/* wake37 */
@@ -90,7 +90,7 @@ static int tegra_gpio_wakes[] = {
 	TEGRA_GPIO_PR7,				/* wake49 */
 	TEGRA_GPIO_PR4,				/* wake50 */
 	TEGRA_GPIO_PQ0,				/* wake51 */
-	-EINVAL,			/* wake52 */
+	TEGRA_GPIO_PEE3,			/* wake52 */
 	-EINVAL,				/* wake53 */
 	TEGRA_GPIO_PQ5,				/* wake54 */
 	-EINVAL,				/* wake55 */
@@ -155,7 +155,7 @@ static int tegra_wake_event_irq[] = {
 	-EAGAIN, /* HDMI CEC */			/* wake52 */
 	-EINVAL, /* I2C3 CLK */			/* wake53 */
 	-EAGAIN,				/* wake54 */
-	-EINVAL, /* UART3 CTS */		/* wake55 */
+	INT_UARTC, /* UART3 CTS */		/* wake55 */
 	-EAGAIN, /* SDMMC3 CD */		/* wake56 */
 	-EINVAL, /* spdif_in */			/* wake57 */
 	INT_XUSB_PADCTL, /* XUSB superspeed wake */	/* wake58 */

@@ -1,7 +1,7 @@
 /*
  * arch/arm/mach-tegra/include/mach/sleep-t3.S
  *
- * Copyright (c) 2010-2013, NVIDIA CORPORATION.  All rights reserved.
+ * Copyright (c) 2010-2014, NVIDIA CORPORATION.  All rights reserved.
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -880,7 +880,6 @@ powerdown_pll_cx:
 	 */
 	pll_iddq_entry r1, r5, CLK_RESET_PLLX_MISC3, CLK_RESET_PLLX_MISC3_IDDQ
 #endif
-
 	/*
 	 * Switch to STDBY clock (CLKS), bits 28:31 == 0
 	 * Enable burst on CPU IRQ (bit 24)

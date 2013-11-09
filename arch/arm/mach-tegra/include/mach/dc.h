@@ -505,13 +505,13 @@ struct tegra_dc_out {
 	unsigned			n_out_pins;
 
 	struct tegra_dc_sd_settings	*sd_settings;
-	
+
 	u8			*out_sel_configs;
 	unsigned		n_out_sel_configs;
 	bool			user_needs_vblank;
 	struct completion	user_vblank_comp;
 	int	(*read_ext_edid)(u8*);
-	
+
 	int	(*enable)(struct device *);
 	int	(*postpoweron)(struct device *);
 	int	(*prepoweroff)(void);

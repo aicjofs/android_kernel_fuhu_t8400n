@@ -212,7 +212,7 @@ int tegra_core_speedo_mv(void)
 	switch (soc_speedo_id) {
 	case 0:
 		if (core_process_id == 1)
-			return 1170;
+			return 1250;
 	/* fall thru if core_process_id = 0 */
 	case 1:
 		if ((tegra_sku_id == 0x4) || (tegra_sku_id == 0x8))
