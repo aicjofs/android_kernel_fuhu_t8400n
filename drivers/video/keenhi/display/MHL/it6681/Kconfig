@@ -1,0 +1,10 @@
+# 
+# Copyright (C) 2013 ITE Tech. Inc.
+# Author: Hermes Wu <hermes.wu@ite.com.tw>
+# 
+
+config MHL_IT6681
+	tristate "it6681 hdmi2mhl device"
+	help
+	  it6611 HDMI to MHL device
+
