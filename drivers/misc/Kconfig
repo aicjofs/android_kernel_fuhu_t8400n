@@ -620,7 +620,7 @@ config SN65DSI83_BRIDGE
 	  This is a driver for the  sn65dsi83 bridge.
 
 config LIGHTSENSOR_EPL6814
-	tristate " EPL6814"
+	tristate "EPL6814"
 	default n
 	depends on I2C
 
