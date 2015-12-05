@@ -143,7 +143,7 @@ unsigned long tegra_nck_start;
 unsigned long tegra_nck_size;
 #endif
 
-static int pmu_core_edp;
+static int pmu_core_edp = 1250;
 static int board_panel_type;
 static enum power_supply_type pow_supply_type = POWER_SUPPLY_TYPE_MAINS;
 static int pwr_i2c_clk = 400;
