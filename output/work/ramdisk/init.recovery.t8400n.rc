@@ -1,0 +1,9 @@
+# adb shell is disabled by default during recoverying process, because if user
+# enable adb shell before updater-script runs, it would cause mount/umount
+# failure for /system partition. uncomment below to enable it for debugging.
+
+#on init
+#    export PATH /system/bin:/system/xbin
+#
+#on property:ro.debuggable=1
+#    mount ext4 /dev/block/platform/sdhci-tegra.3/by-name/APP /system wait ro

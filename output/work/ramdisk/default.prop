@@ -1,0 +1,10 @@
+#
+# ADDITIONAL_DEFAULT_PROPERTIES
+#
+ro.secure=0
+ro.allow.mock.location=0
+ro.debuggable=1
+persist.sys.usb.config=adb
+persist.sys.timezone=America/Los_Angeles
+ro.adb.secure=0
+fw.max_users=1
