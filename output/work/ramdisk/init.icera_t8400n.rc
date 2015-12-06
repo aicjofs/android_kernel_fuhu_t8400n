@@ -1,0 +1,65 @@
+# Copyright (c) 2013 NVIDIA Corporation.  All Rights Reserved.
+#
+# NVIDIA Corporation and its licensors retain all intellectual property and
+# proprietary rights in and to this software and related documentation.  Any
+# use, reproduction, disclosure or distribution of this software and related
+# documentation without an express license agreement from NVIDIA Corporation
+# is strictly prohibited.
+
+on init
+# rild properties
+    setprop rild.libargs "-e rmnet0 -e rmnet0:0 -e rmnet0:1"
+    setprop rild.libpath /system/lib/libril-icera.so
+
+# icera generic properties
+    setprop gsm.modem.power.device /sys/class/gpio/gpio120/value,0,1
+    setprop gsm.modem.powercontrol enabled
+    setprop gsm.modem.crashlogs.directory /data/rfs/data/debug
+    setprop ril.maxretries 15
+    setprop ro.ril.devicename /dev/ttyACM0
+    setprop ro.ril.wake_lock_timeout 200000
+    setprop ro.telephony.default_network 9
+
+on boot
+    write /proc/sys/net/core/rmem_default 2097152
+    write /proc/sys/net/core/rmem_max 2097152
+# Modem init
+    write /sys/class/gpio/gpio120/value 1
+
+
+# GPIO BB access for user radio
+    chown radio system /sys/class/gpio/gpio120/value
+
+# BB mapping symbolic name to the logging ttyACM port
+    symlink /dev/ttyACM3 /dev/log_modem
+# BB mapping symbolic name to the at ttyACM port
+    symlink /dev/ttyACM2 /dev/at_modem
+
+# Icera modem debug folders
+    mkdir /data/rfs
+    mkdir /data/rfs/data
+    mkdir /data/rfs/data/debug
+    chown radio system /data/rfs/data
+    chown radio log /data/rfs/data/debug
+    chmod 775 /data/rfs/data/debug
+
+# Icera modem firmware updates
+    mkdir /data/modem_fw
+    chown radio radio /data/modem_fw
+
+# crashlogs service
+service icera-crashlogs /system/bin/icera-crashlogs
+    user root
+    group root
+    disabled
+    oneshot
+
+on property:gsm.modem.crashlogs=0
+    start ril-daemon
+
+on property:gsm.modem.crashlogs=1
+    stop ril-daemon
+    start icera-crashlogs
+
+on property:gsm.modem.logging=1
+    start icera-crashlogs

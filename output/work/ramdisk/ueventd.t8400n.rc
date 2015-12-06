@@ -1,0 +1,84 @@
+/dev/tegra-throughput	0666	system	system
+/dev/knvmap     0660    system  system
+/dev/nvmap      0666    system  system
+/dev/tegra_avp  0660    media   media
+/dev/tegra_avpchannel   0660    media   media
+/dev/tegra_audio_avpchannel	0660	media	media
+/dev/tegra_rpc  0660    media   media
+/dev/tegra_sema	0660    media   media
+/dev/tegra_mediaserver  0660    media   media
+/dev/ov2710     0660    media   camera
+/dev/imx091     0660    media   camera
+/dev/ov9772     0660    media   camera
+/dev/tegra_camera 0660  media   camera
+/dev/camera*    0660    media   camera
+/dev/focuser*   0660    media   camera
+/dev/torch*     0660    media   camera
+/dev/video0     0660    media   camera
+/dev/video1     0660    media   camera
+/dev/mipi-cal   0660    media   camera
+/dev/spdif*     0660    system  audio
+/dev/tegra_dc*  0660    system  system
+/dev/ttyACM*    0660    radio   system
+/dev/ttyACM2    0660    radio   log
+/dev/nvhdcp0    0666    system  system
+/dev/nvhdcp1    0660    system  system
+/dev/nvhost-ctrl	0666	root	root
+/dev/nvhost-display	0666	root	root
+/dev/nvhost-dsi	0666	root	root
+/dev/nvhost-gr2d	0666	root	root
+/dev/nvhost-gr3d	0666	root	root
+/dev/nvhost-isp	0660	media	camera
+/dev/nvhost-mpe	0666	root	root
+/dev/nvhost-msenc 0660  media   camera
+/dev/nvhost-tsec	0666	root	root
+/dev/nvhost-vi	0660	media	camera
+/dev/tf_driver  0660    system  drmrpc
+/dev/ttyHS1	0660	root	system
+/dev/ttyHS2	0660	bluetooth	bluetooth
+#for FM V4L2 Radio
+/dev/radio      0666    system  radio
+/dev/mpu        0640    system  system
+/dev/mpuirq     0640    system  system
+/dev/accelirq   0640    system  system
+/dev/timerirq   0640    system  system
+/dev/raydium_ts 0770    system  system
+/dev/ion        0666    system  system
+/dev/timerinfo  0440    system  system
+/dev/pn544      0660    nfc     nfc
+/dev/cpu_freq_min	0660	system	system
+/dev/cpu_freq_max	0660	system	system
+/dev/min_online_cpus	0660	system	system
+/dev/max_online_cpus	0660	system	system
+/dev/hci_tty	0660	bluetooth	bluetooth
+/dev/tigps	0660	gps	gps
+/dev/quadd	0660	shell	shell
+/dev/quadd_auth	0660	system	system
+/dev/focuser    0660    media   camera
+/dev/camera    0660    media   camera
+/dev/hm2056    0660    media   camera
+/dev/gc2035    0660    media   camera
+/dev/t8ev5    0660    media   camera
+/dev/elan_als	0666	system	system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-006b charge_battery_state 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-006b charge_led_state 0664 system system
+/sys/devices/platform/gpio_switch.0 switches 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000f enable 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000f cali 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000f direct 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000f delay 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000e enable 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000e cali 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000e direct 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-000e delay 0664 system system
+/sys/devices/platform/tegra-fuse odm_production_mode 0444 system system
+/dev/akm8975_aot  0660    system  system
+/dev/akm8975_dev  0660    system  system
+/dev/kionix_accel  0660    system  system
+/dev/NVTflash  0660    system  system
+/sys/devices/platform/magnet-keys.0 gpio_168_state 0665 system system
+/sys/devices/platform/magnet-keys.0 gpio_169_state 0665 system system
+/sys/devices/platform/tegra11-i2c.4/i2c-4/4-0058 power_status_control 0664 system system
+/sys/devices/platform/tegra11-i2c.1/i2c-1/1-0009 wacom_test 0664 system system
+/sys/devices/platform/tegra11-i2c.1/i2c-1/1-0001 touch_test 0664 system system
+/sys/devices/platform/tegra11-i2c.0/i2c-0/0-006b is_karaoke 0664 system system
