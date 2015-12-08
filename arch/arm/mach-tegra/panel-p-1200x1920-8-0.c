@@ -225,7 +225,10 @@ static int dsi_p_1200x1920_8_0_enable(struct device *dev)
 	backlight_on = true;
 
 		// Add external function calls here...
-
+#ifdef CONFIG_DYNAMIC_FSYNC
+		// if dynamic fsync is defined call external suspend function
+	dyn_fsync_resume();
+#endif
 #endif
 	printk("%s:============>exe\n",__func__);
 	if(!atomic_read(&tegra_release_bootloader_fb_flag)) {
@@ -318,7 +321,10 @@ static int dsi_p_1200x1920_8_0_disable(void)
 	backlight_on = false;
 
 		// Add external function calls here...
-
+#ifdef CONFIG_DYNAMIC_FSYNC
+		// if dynamic fsync is defined call external suspend function
+	dyn_fsync_suspend();
+#endif
 #endif
 	if (vdd_lcd_bl)
 		regulator_disable(vdd_lcd_bl);
