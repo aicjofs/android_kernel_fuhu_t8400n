@@ -32,6 +32,14 @@
 #include "devices.h"
 #include "gpio-names.h"
 #include "tegra11_host1x_devices.h"
+#ifdef CONFIG_PANEL_EXT_CONTROL
+#include <linux/backlight_ext_control.h>
+#endif
+
+
+#ifdef CONFIG_PANEL_EXT_CONTROL
+bool backlight_on = false;
+#endif
 
 #define TEGRA_DSI_GANGED_MODE	0
 
@@ -213,6 +221,12 @@ fail:
 static int dsi_p_1200x1920_8_0_enable(struct device *dev)
 {
 	int err = 0;
+#ifdef CONFIG_PANEL_EXT_CONTROL
+	backlight_on = true;
+
+		// Add external function calls here...
+
+#endif
 	printk("%s:============>exe\n",__func__);
 	if(!atomic_read(&tegra_release_bootloader_fb_flag)) {
 		tegra_release_bootloader_fb();
@@ -300,6 +314,12 @@ fail:
 static int dsi_p_1200x1920_8_0_disable(void)
 {
 	printk("-----disable panel\n");
+#ifdef CONFIG_PANEL_EXT_CONTROL
+	backlight_on = false;
+
+		// Add external function calls here...
+
+#endif
 	if (vdd_lcd_bl)
 		regulator_disable(vdd_lcd_bl);
 

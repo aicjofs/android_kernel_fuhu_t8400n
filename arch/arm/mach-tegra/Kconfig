@@ -1101,6 +1101,13 @@ config TEGRA_RT5639_ADC
 	int "RT5639 ADC mode"
 	default "1" if MACH_TERRA7
 	default "2" if MACH_TERRA10
-	default "0"	  
+	default "0"	 
+
+config PANEL_EXT_CONTROL
+	tristate "Panel external control in Dreamtab panel"
+	depends on I2C
+	help
+	  Control suspend/resume events via external hooks to functions in panel
+	  driver. 
 
 endif
