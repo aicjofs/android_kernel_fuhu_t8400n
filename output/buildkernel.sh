@@ -1,6 +1,10 @@
 #!/bin/bash
 
-VER="1.0.1"
+[[ -f saved_value ]] || echo 0 > saved_value
+n=$(< saved_value)
+echo $(( n + 1 )) > saved_value
+
+VER="1.0.$n"
 ZIP_VER="NV08B_KERNEL_"$VER
 
 OUTPUT_DIR=./output
