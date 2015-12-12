@@ -17,6 +17,7 @@ set_progress(0.600000);
 ui_print("--> Updating Modules...");
 package_extract_dir("system", "/system");
 set_progress(0.800000);
+set_metadata("/system/bin/e2fsck", "uid", 0, "gid", 2000, "mode", 0755, "capabilities", 0x0, "selabel", "u:object_r:system_file:s0");
 ui_print("--> Unmounting System...");
 unmount("/system");
 set_progress(1.000000);
